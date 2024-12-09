@@ -36,6 +36,7 @@
     ".env*": "dotenv",
     "ios": "cpp",
     "map": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "queue": "cpp"
   }
 }
