@@ -1,4 +1,5 @@
 import { auth, signOut } from "@/auth";
+import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
@@ -14,11 +15,16 @@ const questions = [
       { _id: "1", name: "React" },
       { _id: "2", name: "JavaScript" },
     ],
-    author: { _id: "1", name: "John Doe" },
+    author: {
+      _id: "1",
+      name: "John Doe",
+      image:
+        "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611765.jpg",
+    },
     upvotes: 10,
     answers: 5,
     views: 100,
-    createdAt: new Date(),
+    createdAt: new Date("2024-09-21"),
   },
   {
     _id: "2",
@@ -28,11 +34,16 @@ const questions = [
       { _id: "1", name: "JavaScript" },
       { _id: "2", name: "JavaScript" },
     ],
-    author: { _id: "1", name: "John Doe" },
+    author: {
+      _id: "1",
+      name: "John Doe",
+      image:
+        "https://img.freepik.com/free-psd/3d-render-avatar-character_23-2150611765.jpg",
+    },
     upvotes: 10,
     answers: 5,
     views: 100,
-    createdAt: new Date(),
+    createdAt: new Date("2021-09-01"),
   },
 ];
 
@@ -76,7 +87,8 @@ const Home = async ({ searchParams }: SearchParams) => {
 
       <div className="mt-10 flex w-full flex-col gap-6">
         {filteredQuestion.map((question) => (
-          <h1 key={question._id}>{question.title}</h1>
+          <QuestionCard key={question._id} question={question} />
+          // <h1 key={question._id}>{question.title}</h1>
         ))}
       </div>
     </>
