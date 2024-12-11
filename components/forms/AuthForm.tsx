@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
 import {
   DefaultValues,
   FieldValues,
@@ -21,7 +22,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
 import ROUTES from "@/constants/routes";
 
 interface AuthFormProps<T extends FieldValues> {
@@ -60,7 +60,7 @@ const AuthForm = <T extends FieldValues>({
             control={form.control}
             name={field as Path<T>}
             render={({ field }) => (
-              <FormItem className="flex-col flex w-full gap-2">
+              <FormItem className="flex w-full flex-col gap-2">
                 <FormLabel className="paragraph-medium text-dark400_light700 ">
                   {field.name === "email"
                     ? "Email Address"
@@ -71,7 +71,7 @@ const AuthForm = <T extends FieldValues>({
                     required
                     type={field.name === "password" ? "password" : "text"}
                     {...field}
-                    className="paragraph-regular background-light900_dark300 light-border- text-dark300_light700 no-focus min-h-12 rounded-1.5 border"
+                    className="paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 no-focus min-h-12 rounded-1.5 border"
                   />
                 </FormControl>
                 <FormMessage />
