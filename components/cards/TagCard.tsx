@@ -15,7 +15,7 @@ interface Props {
   compact?: boolean;
   remove?: boolean;
   isButton?: boolean;
-  handleRemove: () => void;
+  handleRemove?: () => void;
 }
 
 const TagCard = ({
