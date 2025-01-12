@@ -25,6 +25,8 @@ if (!cached) {
 }
 
 const dbConnect = async (): Promise<Mongoose> => {
+  // console.log(MONGODB_URI);
+
   if (cached.conn) {
     logger.info("Using existing mongoose connection");
     return cached.conn;
@@ -40,6 +42,7 @@ const dbConnect = async (): Promise<Mongoose> => {
         return result;
       })
       .catch((error) => {
+        console.log(error);
         logger.error("Error connecting to MongoDB", error);
         throw error;
       });

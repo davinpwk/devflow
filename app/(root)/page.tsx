@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { auth, signOut } from "@/auth";
 import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilter from "@/components/filters/HomeFilter";
@@ -6,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
 import handleError from "@/lib/handlers/error";
 import dbConnect from "@/lib/mongoose";
-import Link from "next/link";
 
 const questions = [
   {
@@ -79,7 +80,7 @@ const Home = async ({ searchParams }: SearchParams) => {
 
   return (
     <>
-      <section className="flex w-full flex-col-reverse sm:flex-row sm:items-center justify-between">
+      <section className="flex w-full flex-col-reverse justify-between sm:flex-row sm:items-center">
         <h1 className="h1-bold text-dark100_light900">All Questions</h1>
 
         <Button className="primary-gradient min-h-[46px] px-4 py-3 !text-light-900">
